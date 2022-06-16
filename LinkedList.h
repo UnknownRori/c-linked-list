@@ -43,7 +43,7 @@ struct ListNode
      *
      * @param ListNode
      */
-    int (*print)(ListNode *listNode);
+    void (*print)(ListNode *listNode);
 
     /**
      * @brief Find and return a node in the list
