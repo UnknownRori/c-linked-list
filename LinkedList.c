@@ -12,8 +12,6 @@ void appendFirst(ListNode *listNode, int value)
 
     ListNode *newNode = createList(value);
 
-    free(listNode);
-
     newNode->next = oldNode;
 
     *listNode = *newNode;
