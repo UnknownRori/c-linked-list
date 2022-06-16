@@ -7,6 +7,7 @@ int main()
 
     root->appendLast(root, 20);
     root->appendLast(root, 30);
+    root->appendFirst(root, 0);
 
     root->print(root);
 

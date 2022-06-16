@@ -5,6 +5,20 @@
 #define true 1
 #define false 0
 
+void appendFirst(ListNode *listNode, int value)
+{
+    ListNode *oldNode = createList(listNode->data);
+    oldNode->next = listNode->next;
+
+    ListNode *newNode = createList(value);
+
+    free(listNode);
+
+    newNode->next = oldNode;
+
+    *listNode = *newNode;
+}
+
 void appendLast(ListNode *listNode, int value)
 {
     ListNode *newNode = createList(value);
@@ -46,6 +60,7 @@ ListNode *createList(int initialValue)
     newList->data = initialValue;
     newList->next = NULL;
     newList->appendLast = &appendLast;
+    newList->appendFirst = &appendFirst;
     newList->print = &print;
 
     return newList;
