@@ -5,6 +5,13 @@
 #define true 1
 #define false 0
 
+void removeFirst(ListNode *listNode)
+{
+    ListNode *nextNode = listNode->next;
+    free(listNode);
+    *listNode = *nextNode;
+}
+
 void removeLast(ListNode *listNode)
 {
     while (true)
@@ -75,6 +82,7 @@ ListNode *createList(int initialValue)
     newList->appendLast = &appendLast;
     newList->appendFirst = &appendFirst;
     newList->removeLast = &removeLast;
+    newList->removeFirst = &removeFirst;
     newList->print = &print;
 
     return newList;

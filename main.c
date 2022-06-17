@@ -17,5 +17,10 @@ int main()
 
     root->print(root);
 
+    root->appendLast(root, 60);
+    root->removeFirst(root);
+
+    root->print(root);
+
     return 0;
 }
