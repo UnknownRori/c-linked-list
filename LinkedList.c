@@ -9,6 +9,7 @@ void removeFirst(ListNode *listNode)
 {
     ListNode *nextNode = listNode->next;
     free(listNode);
+    listNode = malloc(sizeof(ListNode));
     *listNode = *nextNode;
 }
 
