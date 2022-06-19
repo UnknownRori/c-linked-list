@@ -13,9 +13,6 @@ void reverse(ListNode *listNode)
 
     while (true)
     {
-        free(listNode);
-        listNode = malloc(sizeof(ListNode));
-
         newRoot->next = tempNode;
         *listNode = *newRoot;
 
