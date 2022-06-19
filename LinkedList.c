@@ -5,6 +5,32 @@
 #define true 1
 #define false 0
 
+void reverse(ListNode *listNode)
+{
+    ListNode *newRoot = listNode->next;
+    ListNode *nextNode = listNode->next->next;
+    ListNode *tempNode = createList(listNode->data);
+
+    while (true)
+    {
+        free(listNode);
+        listNode = malloc(sizeof(ListNode));
+
+        newRoot->next = tempNode;
+        *listNode = *newRoot;
+
+        if (nextNode == NULL)
+            break;
+        else
+        {
+            newRoot = nextNode;
+            nextNode = nextNode->next;
+            tempNode = createList(listNode->data);
+            tempNode->next = listNode->next;
+        }
+    }
+}
+
 void removeFirst(ListNode *listNode)
 {
     ListNode *nextNode = listNode->next;
@@ -84,6 +110,7 @@ ListNode *createList(int initialValue)
     newList->appendFirst = &appendFirst;
     newList->removeLast = &removeLast;
     newList->removeFirst = &removeFirst;
+    newList->reverse = &reverse;
     newList->print = &print;
 
     return newList;
