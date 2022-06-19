@@ -26,5 +26,18 @@ int main()
 
     root->print(root);
 
+    root->appendLast(root, 0);
+    root->appendLast(root, -10);
+
+    root->print(root);
+
+    root->removeLast(root);
+
+    root->print(root);
+
+    root->reverse(root);
+
+    root->print(root);
+
     return 0;
 }
