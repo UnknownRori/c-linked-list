@@ -9,6 +9,13 @@ struct ListNode
     ListNode *next;
 
     /**
+     * @brief Reverse the linked list node
+     *
+     * @param  ListNode
+     */
+    void (*reverse)(ListNode *listNode);
+
+    /**
      * @brief Append a new list node on the end node in a list
      *
      * @param  ListNode

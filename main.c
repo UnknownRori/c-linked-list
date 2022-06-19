@@ -22,5 +22,9 @@ int main()
 
     root->print(root);
 
+    root->reverse(root);
+
+    root->print(root);
+
     return 0;
 }
