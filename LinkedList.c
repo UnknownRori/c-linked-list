@@ -5,6 +5,28 @@
 #define true 1
 #define false 0
 
+void empty(ListNode *listNode)
+{
+    ListNode *Node = listNode->next;
+    listNode->next = NULL;
+
+    while (true)
+    {
+        ListNode *nextNode = Node->next;
+
+        free(Node);
+
+        if (nextNode != NULL)
+        {
+            Node = malloc(sizeof(ListNode));
+
+            *Node = *nextNode;
+        }
+        else
+            break;
+    }
+}
+
 void reverse(ListNode *listNode)
 {
     ListNode *newRoot = listNode->next;
@@ -107,6 +129,7 @@ ListNode *createList(int initialValue)
     newList->appendFirst = &appendFirst;
     newList->removeLast = &removeLast;
     newList->removeFirst = &removeFirst;
+    newList->empty = &empty;
     newList->reverse = &reverse;
     newList->print = &print;
 
