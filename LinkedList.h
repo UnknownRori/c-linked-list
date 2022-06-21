@@ -46,6 +46,13 @@ struct ListNode
     void (*removeFirst)(ListNode *listNode);
 
     /**
+     * @brief Empty the list except the first value in the list
+     *
+     * @param ListNode
+     */
+    void (*empty)(ListNode *ListNode);
+
+    /**
      * @brief Print the list
      *
      * @param ListNode
