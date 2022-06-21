@@ -39,5 +39,9 @@ int main()
 
     root->print(root);
 
+    root->empty(root);
+
+    root->print(root);
+
     return 0;
 }
